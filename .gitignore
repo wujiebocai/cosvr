@@ -1,0 +1,7 @@
+/build/*
+/_generate/
+
+*.lock
+*.pid
+*.log
+*.test

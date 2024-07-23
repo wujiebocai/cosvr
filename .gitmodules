@@ -1,0 +1,12 @@
+[submodule "dep/yaml-cpp"]
+	path = dep/yaml-cpp
+	url = https://github.com/jbeder/yaml-cpp.git
+[submodule "dep/spdlog"]
+	path = dep/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "dep/async_simple"]
+	path = dep/async_simple
+	url = https://github.com/alibaba/async_simple.git
+[submodule "dep/asio"]
+	path = dep/asio
+	url = https://github.com/chriskohlhoff/asio.git

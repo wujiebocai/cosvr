@@ -1,0 +1,55 @@
+gameName: sss
+datasDir: datas
+instStr: 1
+
+servers:
+  common:
+    errWithStack: true
+    logLevel: debug
+  gatewaysvr:
+    net:
+      url: :10001
+      tcpKeepAlive: 60
+      disconnectTimeout: 1
+  gamesvr:
+    net:
+      url: :10002
+      tcpKeepAlive: 60
+  redisproxysvr:
+    net:
+      url: :10003
+      tcpKeepAlive: 60
+    redises:
+      - addrs:
+          - :6300
+        password: "ray"
+        readOnly: true
+      - addrs:
+          - :6310
+        password: "ray"
+        readOnly: true
+      - addrs:
+          - :6310
+        password: "ray"
+        readOnly: true
+      - addrs:
+          - :6320
+        password: "ray"
+        readOnly: true
+      - addrs:
+          - :6330
+        password: "ray"
+        readOnly: true
+      - addrs:
+          - :6340
+        password: "ray"
+        readOnly: true
+    redisesmap:
+      pubdb: 
+        addr: :6300
+        password: "ray"
+      pridb:
+        addr: :6310
+        password: "ray10"
+
+dumpmsg: true

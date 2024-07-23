@@ -1,0 +1,49 @@
+syntax="proto3";
+
+package test;
+
+enum TEST_MSG {
+  INVALID = 0;
+  REQ_AUTH = 10001;
+  RSP_AUTH = 10002;
+  REQ_LOGIN = 10003;
+  RSP_LOGIN = 10004;
+  REQ_LOGOUT = 10005;
+  RSP_LOGOUT = 10006;
+}
+
+message AuthReq {
+  string openId   = 1;
+  string userType = 2;
+}
+
+message rolebase {
+  uint32 roleid = 1;
+  uint32 leve = 2;
+  string name = 3;
+}
+
+message AuthRsp {
+  uint32 userid = 1;
+  // role list
+  repeated rolebase roles = 2;
+}
+
+message LoginReq {
+  uint64 roleId = 1;
+  uint32 userid = 2;
+}
+message LoginRsp {
+  rolebase role = 1;
+}
+
+message LogoutReq {}
+message LogoutRsp {}
+
+message TestDataRequest {
+  string data = 1;
+}
+
+message TestDataResponse {
+  string data = 1;
+}
