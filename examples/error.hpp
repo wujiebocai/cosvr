@@ -34,7 +34,7 @@ void test_err() {
         err code: 1, msg: wrap err code with stack info test error; call stack: 
         #0 /home/.../modules/error/error.hpp:139 wrap_error_with_stack<char const (&)[11]> [6925190]
         #1 /home/.../demo/error.hpp:38 test_err [5333590]
-        #2 /home/.../gsvr/demo/main.cpp:688 main [5389161]
+        #2 /home/.../cosvr/demo/main.cpp:688 main [5389161]
         #3 ../csu/libc-start.c:308 __libc_start_main [140737347588226]
         #4 :0 _start [4302237]
         #5 :0  [18446744073709551615]

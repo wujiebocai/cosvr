@@ -19,15 +19,15 @@ include_directories("${PROJECT_BINARY_DIR}/output/include")
 
 add_dependencies(PROTO_LIB protoc ${YAML_LIBRARIES} )
 
-add_library(gsvr-static STATIC $<TARGET_OBJECTS:PROTO_LIB>
+add_library(cosvr-static STATIC $<TARGET_OBJECTS:PROTO_LIB>
                                #$<TARGET_OBJECTS:SOURCES_LIB>
             )
 #endif()
 
-target_link_libraries(gsvr-static libprotoc)
+target_link_libraries(cosvr-static libprotoc)
 
 if(UNIX)
-target_link_libraries(${EXE_NAME} ${OPENSSL_LIBRARY} ${THREAD_LIBRARY} gsvr-static ${YAML_LIBRARIES}  m dl dw)
+target_link_libraries(${EXE_NAME} ${OPENSSL_LIBRARY} ${THREAD_LIBRARY} cosvr-static ${YAML_LIBRARIES}  m dl dw)
 else()
 target_link_libraries(${EXE_NAME} ${OPENSSL_LIBRARY} ${THREAD_LIBRARY})
 endif()
