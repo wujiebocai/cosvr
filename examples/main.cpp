@@ -40,8 +40,11 @@ enum e_test_type : uint8_t {
     TEST_YAML,              // yaml配置
 };
 
-int main() {
+int main(int argc, char * argv[]) {
     e_test_type test_type = TEST_ERR;
+    if (argc >= 2) {
+        test_type = static_cast<e_test_type>(std::stoi(argv[1]));
+    }
 
     switch (test_type) {
     case TEST_ERR:
@@ -84,6 +87,7 @@ int main() {
         break;
     }
 
+    std::cout << "=============================" << std::endl;
 ///
 	asio::signal_set signals(g_context_, SIGINT, SIGTERM);
 	signals.async_wait([&](auto, auto){ g_context_.stop(); });

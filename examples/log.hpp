@@ -13,14 +13,14 @@
 
 modules::blog_cfg logcfg {
     name_: "logtest",
-    file_path_: std::string(PROJECT_PATH) + "/demo/logs/log.log",
+    file_path_: std::string(PROJECT_PATH) + "/examples/logs/log.log",
     max_file_size_: 1024 * 1024 * 5,
     max_files_: 20
 };
 
 void test_log() {
     modules::blog_cfg cfg;
-    cfg.file_path_ = std::string(PROJECT_PATH) + "/demo/logs/glog.log";
+    cfg.file_path_ = std::string(PROJECT_PATH) + "/examples/logs/glog.log";
     modules::set_global_log_config(cfg);
 
     static std::shared_ptr<modules::log::blog> logptr = modules::make_log(logcfg);

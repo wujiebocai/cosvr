@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/_generate/bin/x86_64-linux-gnu/Debug/examples",
-            "args": [],
+            "args": ["1"], // 参数设置测试示列类型
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
